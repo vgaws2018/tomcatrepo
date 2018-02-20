@@ -1,0 +1,25 @@
+#!/bin/sh
+
+#Create tomcat directory
+mkdir -p /opt/tomcat/
+cd /opt/tomcat/
+
+#Dowloading tomcat installables
+wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5.28.tar.gz
+
+#Installing tomcat
+tar -xvzf apache-tomcat-8.5.28.tar.gz
+cd apache-tomcat-8.5.28/bin/
+chmod +x startup.sh shutdown.sh
+
+#Starting Tomcat instance
+sh startup.sh
+
+# War deployement 
+cd /opt/tomcat/apache-tomcat-8.5.28/webapps/
+wget https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war 
+cd /opt/tomcat/apache-tomcat-8.5.28/bin/
+# Restarting Tomcat services.
+sh shutdown.sh
+sh startup.sh
+
