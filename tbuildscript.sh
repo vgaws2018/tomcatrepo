@@ -1,8 +1,7 @@
 #!/bin/sh
 
 #Create tomcat directory
-mkdir -p /opt/tomcat/
-chmod -R 777  /opt/tomcat/
+#mkdir -p /opt/tomcat/
 cd /opt/tomcat/
 
 #Dowloading tomcat installables
@@ -12,6 +11,10 @@ wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5
 tar -xvzf apache-tomcat-8.5.28.tar.gz
 cd apache-tomcat-8.5.28/bin/
 chmod +x startup.sh shutdown.sh
+
+#Changing port of tomcat
+cd /opt/tomcat/apache-tomcat-8.5.28/conf
+sed -i 's/8080/8088/g' server.xml
 
 #Starting Tomcat instance
 sh startup.sh
