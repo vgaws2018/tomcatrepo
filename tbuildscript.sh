@@ -2,6 +2,7 @@
 
 #Create tomcat directory
 mkdir -p /opt/tomcat/
+chmod -R 777  /opt/tomcat/
 cd /opt/tomcat/
 
 #Dowloading tomcat installables
