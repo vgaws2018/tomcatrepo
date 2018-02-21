@@ -22,8 +22,8 @@ sed -i 's/8080/8088/g' server.xml
 # War deployement 
 cd /opt/tomcat/apache-tomcat-8.5.28/webapps/
 wget https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war 
-sh /opt/tomcat/apache-tomcat-8.5.28/bin/catalina.sh start
+cd /opt/tomcat/apache-tomcat-8.5.28/bin/
 # starting Tomcat services.
-
+sh catalina.sh start
 
 
