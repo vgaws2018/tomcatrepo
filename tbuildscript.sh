@@ -17,13 +17,13 @@ cd /opt/tomcat/apache-tomcat-8.5.28/conf
 sed -i 's/8080/8088/g' server.xml
 
 #Starting Tomcat instance
-sh startup.sh
+#sh startup.sh
 
 # War deployement 
 cd /opt/tomcat/apache-tomcat-8.5.28/webapps/
 wget https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war 
 cd /opt/tomcat/apache-tomcat-8.5.28/bin/
 # Restarting Tomcat services.
-sh shutdown.sh
-sh startup.sh
+sh /opt/tomcat/apache-tomcat-8.5.28/bin/startup.sh
+
 
